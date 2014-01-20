@@ -1,0 +1,9 @@
+{
+  "name": "FoxTorrent",
+  "version": "0.1.0",
+  "dependencies": {
+    "crypto-js": "http://crypto-js.googlecode.com/files/CryptoJS%20v3.1.2.zip",
+    "react": "~0.8.0",
+    "underscore": "~1.5.2"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "FoxTorrent",
+  "version": "0.1.0",
+  "description": "A BitTorrent client for Firefox OS",
+  "developer": {
+    "name": "Kevin Simons",
+    "url": "http://www.comoyo.com"
+  },
+  "launch_path": "/index.html",
+  "type": "privileged",
+  "default_locale": "en",
+  "installs_allowed_from": [
+    "*"
+  ],
+  "fullscreen": "false",
+  "icons": {
+    "16": "/images/icon16.png",
+    "32": "/images/icon32.png",
+    "48": "/images/icon48.png",
+    "64": "/images/icon64.png",
+    "128": "/images/icon128.png",
+    "512": "/images/icon512.png"
+  },
+  "activities": {
+    "view": {
+      "filters": {
+        "type": "application/x-bittorrent"
+      },
+      "href": "/index.html",
+      "disposition": "window",
+      "returnValue": false
+    }
+  },
+  "permissions": {
+    "systemXHR": {
+      "description": "Required to download .torrent files"
+    },
+    "tcp-socket": {
+      "description": "Required to download torrents"
+    }
+  }
+}
