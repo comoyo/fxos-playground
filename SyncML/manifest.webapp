@@ -1,0 +1,25 @@
+{
+  "name": "O Sync",
+  "description": "Sync your contacts with an O-Sync Account",
+  "launch_path": "/index.html",
+  "icons": {
+    "60": "/icon60x60.png",
+    "128": "/icon128x128.png"
+  },
+  "developer": {
+    "name": "Casper van Donderen",
+    "url": "http://www.comoyo.com"
+  },
+  "permissions": {
+    "contacts":{
+      "description": "Contacts permission is required to sync contacts from O-Sync to your Firefox OS phone",
+      "access": "readwrite"
+      },
+    "systemXHR": {
+      "description": "XHR permission is required to connect to the O-Sync server"
+    }
+  },
+  "fullscreen": "true",
+  "default_locale": "en",
+  "type": "privileged"
+}
