@@ -1,0 +1,15 @@
+{
+  "name": "LeLa",
+  "description": "LeLa is an application te help you learn languages",
+  "launch_path": "/index.html",
+  "icons": {
+    "60": "icons/lela60x60.png",
+    "128": "icons/lela128x128.png"
+  },
+  "developer": {
+    "name": "Casper van Donderen",
+    "url": "http://www.comoyo.com"
+  },
+  "fullscreen": "true",
+  "default_locale": "en"
+}

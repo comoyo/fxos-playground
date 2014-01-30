@@ -1,0 +1,16 @@
+<script>
+  var LeLaSpeechProto = Object.create(HTMLElement.prototype);
+  LeLaSpeechProto.createdCallback = function(e) {
+    this.onclick = function(e) {
+      this.speak();
+    };
+    console.log("Created lela-speech");
+  };
+  LeLaSpeechProto.speak = function () {
+    var utterance = new SpeechSynthesisUtterance(this.textContent);
+    utterance.lang = this.lang;
+    utterance.rate = 0.9;
+    window.speechSynthesis.speak(utterance);
+  };
+  var LeLaSpeech = document.register('lela-speech', {prototype: LeLaSpeechProto});
+</script>
