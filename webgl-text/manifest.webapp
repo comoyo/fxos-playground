@@ -1,0 +1,22 @@
+{
+  "name": "WebGLText",
+  "version": "0.1.0",
+  "description": "Some experiments with rendering text for WebGL",
+  "developer": {
+    "name": "Kevin Simons",
+    "url": "http://www.comoyo.com"
+  },
+  "launch_path": "/index.html",
+  "default_locale": "en",
+  "installs_allowed_from": [
+    "*"
+  ],
+  "icons": {
+    "16": "/images/icon16.png",
+    "32": "/images/icon32.png",
+    "48": "/images/icon48.png",
+    "64": "/images/icon64.png",
+    "128": "/images/icon128.png",
+    "512": "/images/icon512.png"
+  }
+}
