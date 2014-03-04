@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "name": "Lunch time",
+  "description": "Lunch menu at Telenor Fornebu",
+  "icons": {
+  },
+  "developer": {
+    "name": "Tor Arvid Lund"
+  },
+  "launch_path": "/index.html",
+  "orientation": "portrait",
+  "fullscreen": "true",
+  "permissions": {
+  }
+}
