@@ -7,7 +7,9 @@
     "stylus": "~0.42.1",
     "underscore": "~1.5.2",
     "sprintf-js": "0.0.7",
-    "react": "^0.9.0"
+    "react": "^0.9.0",
+    "q": "^1.0.0",
+    "moment": "^2.5.1"
   },
   "devDependencies": {
     "gulp": "~3.5.0",
@@ -21,7 +23,17 @@
     "gulp-coffee": "~1.4.1",
     "coffee-script": "~1.7.1",
     "react-tools": "^0.9.0",
-    "gulp-react": "^0.2.0"
+    "gulp-react": "^0.2.0",
+    "browserify": "^3.32.0",
+    "browserify-shim": "^3.3.1"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "global:$"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

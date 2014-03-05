@@ -1,14 +1,63 @@
 _ = require("underscore")
 React = require("react")
+q = require("q")
+Ajax = require("./ajax")
+config = require("../etc/config")
+moment = require("moment")
 
 LunchTime = React.createClass {
+  getInitialState: ->
+    timestampAtFornebu = moment()
+    timestampAtFornebu.lang("nb_NO")
+    {ajax: new Ajax(), timestamp: timestampAtFornebu}
+  renderForLunchData: (data) ->
+    props = @props
+    day = _.find(data, (day) => day.date == @state.timestamp.format("DD-MM-YYYY"))
+    React.renderComponent `<DailyContent data={day} lang={props.lang} />`, @refs.root.getDOMNode()
+  componentDidMount: ->
+    url = config.lunchUrlTemplate
+      .replace "${year4digits}", @state.timestamp.year()
+      .replace "${week2digits}", @state.timestamp.format("ww")
+    @state.ajax.getJson(url)
+      .then (data) => @renderForLunchData data
+      , (error) -> console.error "Error #{JSON.stringify(error)}"
+    .done()
+    return
+  render: -> `(<div ref="root" className="lunchtimeRoot"></div>)`
+}
+
+DailyContent = React.createClass {
   render: ->
-    `(
-      <div>Hey, world! Whazzup?!
+    props = @props
+    return `(
+      <div className="dailyContent">
+      {props.data.cantines.map(function(cantine){
+          return <CantineContent key={cantine.name} data={cantine} lang={props.lang} />
+        })
+      }
       </div>
     )`
 }
 
-React.renderComponent `<LunchTime />`, document.getElementById('lunchtimeRoot')
+CantineContent = React.createClass {
+  render: ->
+    props = @props
+    return `(
+      <div className="cantineContent">
+        <div className="cantineName">{props.data.name}</div>
+        <div className="cantineLocation">{props.data.location}</div>
+        <div className="cantineLunch">
+          <table>
+            {props.data.meal.lunch.map(function(item) {
+                return <tr key={item.type}><th>{item.type}</th><td>{item[props.lang]}</td></tr>
+              })
+            }
+          </table>
+        </div>
+      </div>
+    )`
+}
+
+React.renderComponent `<LunchTime lang="no"/>`, document.getElementById('lunchtimeContainer')
 
 module.exports = LunchTime
