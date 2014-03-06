@@ -36,6 +36,7 @@ DailyContent = React.createClass {
           return <CantineContent key={cantine.name} data={cantine} lang={props.lang} />
         })
       }
+      <div className="dailyFooter"></div>
       </div>
     )`
 }
