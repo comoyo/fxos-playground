@@ -12,7 +12,6 @@ gutil = require("gulp-util")
 errorHandler = (e) ->
   gutil.log e
   gutil.beep()
-  console.log "Hey, dude"
   return true
 
 watchHelper = (pattern, task) ->
@@ -49,7 +48,7 @@ gulp.task 'copy', ->
 
 gulp.task "browserify", ["coffee", "coffeex"], ->
   gulp.src("./dist/lib/lunchtime.js", read: false)
-  .pipe(browserify())
+  .pipe(browserify({debug: true}))
   .on("error", errorHandler)
   .pipe(rename("bundle.js"))
   .pipe gulp.dest("./dist/lib")
@@ -60,10 +59,11 @@ gulp.task "dev", ["build"], ->
   watchHelper "style/*.styl", "stylus"
   watchHelper "lib/*.coffee", "browserify"
   watchHelper "lib/*.coffeex", "browserify"
+  watchHelper ['./etc/*','package.json', 'index.html', 'manifest.webapp'], "copy"
   watchHelper ["lib/*.js", "etc/*", "dist/*.js", "!dist/bundle.js"], "browserify"
 
 gulp.task "clean", ->
-  gulp.src(["dist/**/*.*", "style/appbooking.css"], read: false)
+  gulp.src(["dist/**/*.*"], read: false)
   .pipe clean()
 
 gulp.task "default", ["build"], ->
