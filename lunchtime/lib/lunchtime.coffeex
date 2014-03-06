@@ -45,7 +45,10 @@ CantineContent = React.createClass {
     return `(
       <div className="cantineContent">
         <div className="cantineHeader">
-          <div className="cantineName"><span>{props.data.name}</span></div>
+          <div className="cantineName">
+            <div className={"cantineNameFlag flag" + props.data.name}></div>
+            <span className={props.data.name}>{props.data.name}</span>
+          </div>
           <div className="cantineLocation"><span>{props.data.location}</span></div>
         </div>
         <div className="cantineLunch">
