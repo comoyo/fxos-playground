@@ -36,10 +36,10 @@ gulp.task "coffeex", ->
   .pipe gulp.dest("./dist/")
 
 gulp.task "stylus", ->
-  gulp.src("style/*.styl")
+  gulp.src("style/*.styl", {base: '.'})
   .pipe(stylus())
   .on("error", errorHandler)
-  .pipe gulp.dest("./style/")
+  .pipe gulp.dest("./dist/")
 
 gulp.task 'copy', ->
   gulp.src ['./etc/*','package.json', 'index.html', 'manifest.webapp'], {base: '.'}
