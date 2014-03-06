@@ -31,6 +31,7 @@ DailyContent = React.createClass {
     props = @props
     return `(
       <div className="dailyContent">
+      <h2>Menu du jour:</h2>
       {props.data.cantines.map(function(cantine){
           return <CantineContent key={cantine.name} data={cantine} lang={props.lang} />
         })
