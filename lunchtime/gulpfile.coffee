@@ -8,6 +8,7 @@ clean = require("gulp-clean")
 coffee = require("gulp-coffee")
 plumber = require("gulp-plumber")
 gutil = require("gulp-util")
+livereload = require("gulp-livereload")
 
 errorHandler = (e) ->
   gutil.log e
@@ -30,10 +31,8 @@ gulp.task "coffeex", ->
   gulp.src("lib/*.coffeex", {base: '.'})
   .pipe(plumber())
   .pipe(coffee(bare: true))
-  #.on("error", errorHandler)
   .pipe(rename(ext: ".jsx"))
   .pipe(react())
-  #.on("error", errorHandler)
   .pipe gulp.dest("./dist/")
 
 gulp.task "stylus", ->
@@ -61,6 +60,14 @@ gulp.task "dev", ["build"], ->
   watchHelper "lib/*.coffeex", "browserify"
   watchHelper ['./etc/*','package.json', 'index.html', 'manifest.webapp'], "copy"
   watchHelper ["lib/*.js", "etc/*", "dist/*.js", "!dist/bundle.js"], "browserify"
+  gulp.start "livereload"
+
+gulp.task 'livereload', ->
+  console.log "Starting live reload server"
+  server = livereload()
+  gulp.watch "./dist/**"
+    .on 'change', (file) ->
+      server.changed file.path
 
 gulp.task "clean", ->
   gulp.src(["dist/**/*.*"], read: false)
