@@ -1,3 +1,15 @@
 {
-  "lunchUrlTemplate": "http://s3-eu-west-1.amazonaws.com/telenorlunch.ddenis.info/${year4digits}-w${week2digits}-fornebu.json"
+  "lunchUrlTemplate": "http://s3-eu-west-1.amazonaws.com/telenorlunch.ddenis.info/${year4digits}-w${week2digits}-fornebu.json",
+  "lang": {
+    "en": {
+      "main": "Main",
+      "soup": "Soup",
+      "salad": "Salad"
+    },
+    "no": {
+      "main": "Varmrett",
+      "soup": "Suppe",
+      "salad": "Salat"
+    }
+  }
 }

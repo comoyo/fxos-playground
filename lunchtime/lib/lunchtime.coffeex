@@ -54,7 +54,11 @@ CantineContent = React.createClass {
         <div className="cantineLunch">
           <table>
             {props.data.meal.lunch.map(function(item) {
-                return <tr key={item.type}><th>{item.type}</th><td>{item[props.lang]}</td></tr>
+                return (
+                  <tr key={item.type}>
+                    <th>{config.lang[props.lang][item.type]}:</th>
+                    <td>{item[props.lang]}</td>
+                  </tr>)
               })
             }
           </table>
