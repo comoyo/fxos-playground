@@ -1,28 +1,28 @@
 _ = require("underscore")
 React = require("react")
-q = require("q")
 Ajax = require("./ajax")
 config = require("../etc/config")
 moment = require("moment")
 
 LunchTime = React.createClass {
-  getInitialState: ->
-    timestampAtFornebu = moment()
-    timestampAtFornebu.lang("nb_NO")
-    {ajax: new Ajax(), timestamp: timestampAtFornebu}
-  renderForLunchData: (data) ->
-    props = @props
-    day = _.find(data, (day) => day.date == @state.timestamp.format("DD-MM-YYYY"))
-    React.renderComponent `<DailyContent data={day} lang={props.lang} />`, @refs.root.getDOMNode()
-  componentDidMount: ->
+  getInitialState: -> {ajax: new Ajax()}
+  getDataForTimestamp: (timestamp, callback) ->
+    timestamp.lang("nb_NO") #We want norwegian time zone for Fornebu
     url = config.lunchUrlTemplate
-      .replace "${year4digits}", @state.timestamp.year()
-      .replace "${week2digits}", @state.timestamp.format("ww")
+      .replace "${year4digits}", timestamp.year()
+      .replace "${week2digits}", timestamp.format("ww")
     @state.ajax.getJson(url)
-      .then (data) => @renderForLunchData data
+      .then (data) ->
+        dataForDay = _.find(data, (day) -> day.date == timestamp.format("DD-MM-YYYY"))
+        callback dataForDay
       , (error) -> console.error "Error #{JSON.stringify(error)}"
     .done()
-    return
+  setupWithTimestamp: (timestamp) -> @getDataForTimestamp timestamp, @renderForDayData
+  renderForDayData: (data) ->
+    props = @props
+    React.unmountComponentAtNode @refs.root.getDOMNode()
+    React.renderComponent `<DailyContent data={data} lang={props.lang} />` , @refs.root.getDOMNode()
+  componentDidMount: -> @setupWithTimestamp moment()
   render: -> `(<div ref="root" className="lunchtimeRoot"></div>)`
 }
 
