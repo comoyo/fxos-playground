@@ -4,12 +4,14 @@
     "en": {
       "main": "Main",
       "soup": "Soup",
-      "salad": "Salad"
+      "salad": "Salad",
+      "desert": "Dessert"
     },
     "no": {
       "main": "Varmrett",
       "soup": "Suppe",
-      "salad": "Salat"
+      "salad": "Salat",
+      "desert": "Dessert"
     }
   }
 }
