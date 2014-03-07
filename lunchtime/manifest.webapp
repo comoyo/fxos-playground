@@ -9,7 +9,7 @@
   },
   "launch_path": "/index.html",
   "orientation": "portrait",
-  "fullscreen": "true",
+  "fullscreen": "false",
   "permissions": {
   }
 }
