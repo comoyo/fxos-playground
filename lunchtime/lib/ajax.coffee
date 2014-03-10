@@ -1,7 +1,7 @@
 q = require("q")
 $ = require("jquery")
 
-test_data = require("../../test_data/2014-w10-fornebu.json")
+test_data = require("../../test_data/2014-w11-fornebu.json")
 
 class Ajax
   constructor: (backend) ->

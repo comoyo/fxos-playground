@@ -1,0 +1,502 @@
+[
+    {
+        "date" : "10-03-2014",
+        "cantines" : [
+            {
+                "name" : "Oasen",
+                "location" : "A/B",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Kylling Tikka Masala med karriris",
+                            "en" : "Chicken Tikka Masala with curry rice"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Vietnamesisk fisk og nudelsuppe",
+                            "en" : "Vietnamese fish and noodle soup"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Maiskolbe med mango chutney",
+                            "en" : "Corn on the cop with mango chutney"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Olivenlunden",
+                "location" : "C/D",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Kjøttkaker med løksaus og poteter",
+                            "en" : "Meat patties with onion sauce and potatoes"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Rotgrønnsakssuppe med pesto",
+                            "en" : "Root vegetable soup with pesto"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Fiskepudding med rekestuing",
+                            "en" : "Fish pudding with shrimp stew"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Variatio Delectat",
+                "location" : "J/K",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Krydret svinekjøtt med ratatouille",
+                            "en" : "Seasoned pork with ratatouille"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Italiensk linsesuppe",
+                            "en" : "Italian lentil soup"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Pasta med chiliolje",
+                            "en" : "Pasta with chili oil"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Happy Landing",
+                "location" : "M",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Spaghetti med kjøttsaus og revet ost",
+                            "en" : "Spaghetti with beef sauce and grated cheese"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Islandsk grønnsakssuppe",
+                            "en" : "Vegetable soup from Iceland"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Fiskekaker med gulrot og kålsalat",
+                            "en" : "Fish cakes with cabbage and carrot salad"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "date" : "11-03-2014",
+        "cantines" : [
+            {
+                "name" : "Oasen",
+                "location" : "A/B",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Soyamarinert laksefilet med eggenudler",
+                            "en" : "Soy marinated salmon with egg noodles"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Couscoussuppe med chili og paprika",
+                            "en" : "Couscous soup with chili and bell pepper"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Arabisk omelett",
+                            "en" : "Arabian omelet"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Olivenlunden",
+                "location" : "C/D",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Pasta med kjøttsaus og parmesan",
+                            "en" : "Pasta Bolognese with parmesan cheese"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Kinesisk fiskesuppe med koriander",
+                            "en" : "China fish soup with coriander"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Smørstekt maiskolbe",
+                            "en" : "Butter roasted corn on the cop"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Variatio Delectat",
+                "location" : "J/K",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Ovnsbakt fisk med timianpoteter",
+                            "en" : "Oven baked fish with thyme potatoes"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Minestronesuppe",
+                            "en" : "Minestrone soup"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Ebly med grønnsaker",
+                            "en" : "Ebly with vegetables"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Happy Landing",
+                "location" : "M",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Danske boller i karri med ris og agurksalat",
+                            "en" : "Traditional Danish  dish with cucumber salad and rice"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Potet og purreløksuppe",
+                            "en" : "Potato and leek soup"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Rødspettefilet med aspargessaus",
+                            "en" : "Filet of Plaice with asparagus sauce"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "date" : "12-03-2014",
+        "cantines" : [
+            {
+                "name" : "Oasen",
+                "location" : "A/B",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Chop suey av svin med jasmin ris",
+                            "en" : "Chop suey of pork with jasmine rice"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Kylling - karrisuppe",
+                            "en" : "Chicken curry soup"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Olivenlunden",
+                "location" : "C/D",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Ingefærbakt kveitefilet med rødløk og potet",
+                            "en" : "Ginger baked halibut  with red onion and potato"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Potetsuppe med purreløk",
+                            "en" : "Potato soup with leek"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Ostepanetter med grønne erter",
+                            "en" : "Cheese panetta with green peas"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Variatio Delectat",
+                "location" : "J/K",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Kyllinglår marinert i italienske krydder servert med ovnsbakte poteter",
+                            "en" : "Chicken legs marinated  with Italian seasoning served with roasted potatoes"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Fiskesuppe med estragon",
+                            "en" : "Fish soup with tarragon"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Pai med skinke og ost",
+                            "en" : "Ham and cheese pie"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Happy Landing",
+                "location" : "M",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Norsk fiskegrateng med smeltet smør, råkost og kokte poteter",
+                            "en" : "Norwegian gratin of fish with butter, vegetables and boiled potatoes"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Brokkolisuppe med svinekjøtt",
+                            "en" : "Broccoli soup with pork"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Osteomelett",
+                            "en" : "Cheese omelet"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "date" : "13-03-2014",
+        "cantines" : [
+            {
+                "name" : "Oasen",
+                "location" : "A/B",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Lam i kryddersterk saus med couscous",
+                            "en" : "Lamb with strong seasoned sauce and couscous"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Bønnesuppe med koriander",
+                            "en" : "Bean soup with coriander"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Stekte risnudler",
+                            "en" : "Fried rice noodles"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Olivenlunden",
+                "location" : "C/D",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "BBQ kyllingvinger med saus og mangoris",
+                            "en" : "BBQ chicken wings with sauce and  mango rice"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Rød linsesuppe med bacon",
+                            "en" : "Red lentil soup with bacon"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Couscous med reker og purreløk",
+                            "en" : "Couscous with shrimp and leek"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Variatio Delectat",
+                "location" : "J/K",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Tagliatelle med skalldyr",
+                            "en" : "Tagliatelle with shellfish"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Spinat og kikertsuppe",
+                            "en" : "Spinach and chickpea soup"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Pasta med olivenpesto",
+                            "en" : "Pasta with olive pesto"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Happy Landing",
+                "location" : "M",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Bøfsandwich med friterte poteter og tilbehør",
+                            "en" : "Danish version of hamburger with French fries and garnish"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Dansk fiskesuppe med fennikel",
+                            "en" : "Danish fish soup with fennel"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Marinerte kyllingvinger",
+                            "en" : "Marinated chicken wings"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "date" : "14-03-2014",
+        "cantines" : [
+            {
+                "name" : "Oasen",
+                "location" : "A/B",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Thai-vårruller med ris og soyasaus",
+                            "en" : "Thai spring rolls with rice and soy sauce"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Hong kongsuppe",
+                            "en" : "Hong Kong soup"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Akkarringer med søt chilisaus",
+                            "en" : "Squid rings with sweet chili sauce"
+                        },
+                        {
+                            "type" : "desert",
+                            "no" : "Yoghurt med lime og honning",
+                            "en" : "Yogurt with lime and honey"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Olivenlunden",
+                "location" : "C/D",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Kjøttboller i brun saus med poteter og rørte tyttebær",
+                            "en" : "Meat balls in brown sauce with potatoes and lingonberries"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Soppsuppe med timian",
+                            "en" : "Mushroom soup with thyme"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Gulrotmedaljong",
+                            "en" : "Carrot patty"
+                        },
+                        {
+                            "type" : "desert",
+                            "no" : "Sjokoladekake",
+                            "en" : "Chocolate cake"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Variatio Delectat",
+                "location" : "J/K",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Lasagna al forno",
+                            "en" : "Lasagna from the oven"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Kyllingsuppe på siciliansk vis",
+                            "en" : "Chicken soup, Sicily style"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Bruschetta",
+                            "en" : "Bruschetta"
+                        },
+                        {
+                            "type" : "desert",
+                            "no" : "Sjokoladekake",
+                            "en" : "Chocolate cake"
+                        }
+                    ]
+                }
+            },
+            {
+                "name" : "Happy Landing",
+                "location" : "M",
+                "meal" : {
+                    "lunch" : [
+                        {
+                            "type" : "main",
+                            "no" : "Svensk fläskfilet med pepparsäs og stekte potatis",
+                            "en" : "Swedish roast of pork with pepper sauce and fried potatoes"
+                        },
+                        {
+                            "type" : "soup",
+                            "no" : "Svensk fiskesuppe",
+                            "en" : "Swedish fish soup"
+                        },
+                        {
+                            "type" : "salad",
+                            "no" : "Karbonade med sprøstekt løk",
+                            "en" : "Meat patty with fried onion"
+                        },
+                        {
+                            "type" : "desert",
+                            "no" : "Danske wienerbrød",
+                            "en" : "Danish pastry"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
