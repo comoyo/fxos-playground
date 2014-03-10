@@ -5,13 +5,15 @@
       "main": "Main",
       "soup": "Soup",
       "salad": "Salad",
-      "desert": "Dessert"
+      "desert": "Dessert",
+      "lunchDataUnavailable": "Error downloading the lunch menu. Computer says no :("
     },
     "no": {
       "main": "Varmrett",
       "soup": "Suppe",
       "salad": "Salat",
-      "desert": "Dessert"
+      "desert": "Dessert",
+      "lunchDataUnavailable": "Feil ved nedlasting av lunsjmeny. Computer says no :("
     }
   }
 }

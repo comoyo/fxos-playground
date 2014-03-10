@@ -29,16 +29,24 @@ LunchTime = React.createClass {
 }
 
 DailyContent = React.createClass {
-  render: ->
+  getContent: ->
     props = @props
+    if props.data
+      return props.data.cantines.map (cantine) =>
+        `(<CantineContent key={cantine.name} data={cantine} lang={props.lang} />)`
     return `(
-      <div className="dailyContent">
-      <h2>Menu du jour:</h2>
-      {props.data.cantines.map(function(cantine){
-          return <CantineContent key={cantine.name} data={cantine} lang={props.lang} />
-        })
-      }
-      <div className="dailyFooter">Tor Arvid, Denis &amp;<br />Hans Christian</div>
+      <div className="dataUnavailable">{config.lang[props.lang].lunchDataUnavailable}</div>)`
+  render: ->
+    return `(
+      <div>
+        <div className="dailyHeader">
+          <table><tr><th>LUNCH</th><td>TIME</td></tr></table>
+        </div>
+        <div className="dailyContent">
+          <h2>Menu du jour:</h2>
+          {this.getContent()}
+          <div className="dailyFooter">Tor Arvid, Denis &amp;<br />Hans Christian</div>
+        </div>
       </div>
     )`
 }
