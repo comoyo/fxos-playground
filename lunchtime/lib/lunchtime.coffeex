@@ -79,8 +79,11 @@ CantineContent = React.createClass {
     )`
 }
 
-init = new Init()
-app = React.renderComponent `<LunchTime lang="no"/>`, document.getElementById('lunchtimeContainer')
-init.registerPageVisibility app.onWakeup
+window.onload = ->
+  init = new Init()
+  container = document.getElementById 'lunchtimeContainer'
+  language = init.getLanguage navigator.language
+  app = React.renderComponent `<LunchTime lang={language}/>`, container
+  init.registerPageVisibility app.onWakeup
 
 module.exports = LunchTime
