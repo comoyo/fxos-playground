@@ -9,6 +9,7 @@ coffee = require("gulp-coffee")
 plumber = require("gulp-plumber")
 gutil = require("gulp-util")
 livereload = require("gulp-livereload")
+uglify = require("gulp-uglify")
 
 errorHandler = (e) ->
   gutil.log e
@@ -47,12 +48,20 @@ gulp.task 'copy', ->
 
 gulp.task "browserify", ["coffee", "coffeex"], ->
   gulp.src("./dist/lib/lunchtime.js", read: false)
+  .pipe(browserify({debug: false}))
+  .on("error", errorHandler)
+  .pipe(uglify())
+  .pipe(rename("bundle.min.js"))
+  .pipe gulp.dest("./dist/lib")
+
+gulp.task "browserifySourceMaps", ["coffee", "coffeex"], ->
+  gulp.src("./dist/lib/lunchtime.js", read: false)
   .pipe(browserify({debug: true}))
   .on("error", errorHandler)
   .pipe(rename("bundle.js"))
   .pipe gulp.dest("./dist/lib")
 
-gulp.task "build", ["stylus", "copy", "browserify"]
+gulp.task "build", ["stylus", "copy", "browserifySourceMaps", "browserify"]
 
 gulp.task "dev", ["build"], ->
   watchHelper "style/*.styl", "stylus"
