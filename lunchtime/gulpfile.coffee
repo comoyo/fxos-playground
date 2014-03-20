@@ -43,7 +43,7 @@ gulp.task "stylus", ->
   .pipe gulp.dest("./dist/")
 
 gulp.task 'copy', ->
-  gulp.src ['./etc/*','package.json', 'index.html', 'manifest.webapp'], {base: '.'}
+  gulp.src ['./etc/*','package.json', 'index.html', 'index.debug.html', 'manifest.webapp'], {base: '.'}
     .pipe gulp.dest('./dist')
 
 gulp.task "browserify", ["coffee", "coffeex"], ->
@@ -65,10 +65,16 @@ gulp.task "build", ["stylus", "copy", "browserifySourceMaps", "browserify"]
 
 gulp.task "dev", ["build"], ->
   watchHelper "style/*.styl", "stylus"
-  watchHelper "lib/*.coffee", "browserify"
-  watchHelper "lib/*.coffeex", "browserify"
-  watchHelper ['./etc/*','package.json', 'index.html', 'manifest.webapp'], "copy"
-  watchHelper ["lib/*.js", "etc/*", "dist/*.js", "!dist/bundle.js"], "browserify"
+  watchHelper ['./etc/*','package.json', 'index.html', 'index.debug.html', 'manifest.webapp'], "copy"
+  watchHelper [
+      "lib/*.js",
+      "etc/*",
+      "dist/*.js",
+      "!dist/bundle.js",
+      "lib/*.coffee",
+      "lib/*.coffeex"
+    ],
+    "browserifySourceMaps"
   gulp.start "livereload"
 
 gulp.task 'livereload', ->
