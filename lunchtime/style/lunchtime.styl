@@ -27,6 +27,8 @@ body
   linear-gradient(-45deg, $bgColor2 25%, transparent 25%, transparent 75%, $bgColor2 75%, $bgColor2);
   background-size 6px 6px;
   overflow auto
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
 
 .dailyHeader
   width 100%
@@ -50,8 +52,6 @@ $dailyFooterHeight = 40px
   min-height 100%
 
 .dailyContent
-  //margin-top -($dailyFooterHeight)
-  //padding-bottom $dailyFooterHeight
   overflow hidden
   clear both
   h2
@@ -64,17 +64,14 @@ $dailyFooterHeight = 40px
     width 100%
 
 .dailyFooter
-  background-color blue
-  //margin-top -($dailyFooterHeight)
+  margin 20px 0 10px 0
   font-family "Gruppo"
   font-size 150%
   font-weight bold
   width 100%
   text-align center
   color #ddd
-  position relative
   clear both
-  height $dailyFooterHeight
 
 .cantineContent
   background-color #fff

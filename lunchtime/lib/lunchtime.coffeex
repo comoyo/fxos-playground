@@ -60,7 +60,7 @@ DailyContent = React.createClass {
   render: ->
     return `(
       <div className="dailyContainer fullHeight">
-        <div className="dailyAllButFooter fullHeight">
+        <div className="dailyAllButFooter">
           <div className="dailyHeader">
             <div className="header element1">
             </div>
@@ -72,6 +72,7 @@ DailyContent = React.createClass {
             {this.getContent()}
           </div>
         </div>
+        <div className="dailyFooter">Tor Arvid, Denis &amp; Hans Christian</div>
       </div>
     )`
 }
