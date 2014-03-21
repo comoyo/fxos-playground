@@ -10,6 +10,7 @@ plumber = require("gulp-plumber")
 gutil = require("gulp-util")
 livereload = require("gulp-livereload")
 uglify = require("gulp-uglify")
+s3 = require "gulp-s3"
 
 errorHandler = (e) ->
   gutil.log e
@@ -87,5 +88,17 @@ gulp.task 'livereload', ->
 gulp.task "clean", ->
   gulp.src(["dist/**/*.*"], read: false)
   .pipe clean()
+
+gulp.task "deploy", ["clean"], ->
+  gulp.start "__deployBuild"
+
+gulp.task "__deployBuild", ["build"], ->
+  gulp.start "__realDeploy"
+
+gulp.task "__realDeploy", ->
+  aws = require "./aws.json"
+  options = { delay: 0, uploadPath: "lunchtime/" }
+  gulp.src('./dist/**', {read: false})
+    .pipe(s3(aws, options));
 
 gulp.task "default", ["build"], ->
