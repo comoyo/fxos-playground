@@ -63,7 +63,6 @@ DailyContent = React.createClass {
         <div className="dailyAllButFooter fullHeight">
           <div className="dailyHeader">
             <div className="header element1">
-              <input type="button" value="—" className="settingsButton" onClick={this.clickSettings}/>
             </div>
             <div className="header element2">LUNCH</div>
             <div className="header element3">TIME</div>
