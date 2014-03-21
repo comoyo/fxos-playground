@@ -4,29 +4,77 @@ $shadowColor = #aaa
 $shadowSize = 2px
 $shadowBlurSize = 1px
 
+*
+  margin 0
+  padding 0
+
+html, .fullHeight
+  height 100%
+
 body
   margin 0
   padding 0
-  font-family sans-serif
+  font-family Arial, sans-serif
+  height 100%
 
-.dailyContent
+.lunchtimeRoot
+  max-width 700px
+  margin 0 auto
+
+.dailyContainer
   background-color $bgColor1;
   background-image linear-gradient(45deg, $bgColor2 25%, transparent 25%, transparent 75%, $bgColor2 75%, $bgColor2),
   linear-gradient(-45deg, $bgColor2 25%, transparent 25%, transparent 75%, $bgColor2 75%, $bgColor2);
   background-size 6px 6px;
-  margin 0
-  padding 0px
   overflow auto
+
+.dailyHeader
+  width 100%
+  line-height 40px
+  background-color #222
+  color #c8c8c8
+  font-family "Varela Round", sans-serif
+  .header
+    display inline-block
+  .element1
+    width 10%
+  .element2
+    width 40%
+    text-align right
+  .element3
+    width 50%
+
+$dailyFooterHeight = 40px
+
+.dailyAllButFooter
+  min-height 100%
+
+.dailyContent
+  //margin-top -($dailyFooterHeight)
+  //padding-bottom $dailyFooterHeight
+  overflow hidden
+  clear both
   h2
     font-family "Baskerville", serif
     font-weight lighter
     font-style italic
     text-align center
-    margin 10px 0 0 0
+    margin 0
+    padding-top 10px
     width 100%
 
 .dailyFooter
-  margin-bottom 15px
+  background-color blue
+  //margin-top -($dailyFooterHeight)
+  font-family "Gruppo"
+  font-size 150%
+  font-weight bold
+  width 100%
+  text-align center
+  color #ddd
+  position relative
+  clear both
+  height $dailyFooterHeight
 
 .cantineContent
   background-color #fff
@@ -73,14 +121,17 @@ cantineNameFlagBackgroundImg(col)
   linear-gradient(30deg, transparent 25%, darken(col, 50%) 25%, darken(col, 50))
 
 .cantineName
-  font-size 80%
+  font-size 14px
   width 50%
   display inline-block
-  span
+  .nameContent
     padding $cantineNamePadding
+    height 16px
     shadow(2px, 2px)
+    display inline-block
   .cantineNameFlag
-    position absolute
+    position relative
+    top 12px
     width 10px
     height 27px
     margin-top -2px
@@ -107,36 +158,13 @@ cantineNameFlagBackgroundImg(col)
   span
     padding-right 10px
 
-.dailyFooter
-  font-family "Gruppo"
-  font-size 150%
-  font-weight bold
+.dataUnavailable
   width 100%
   text-align center
-  color #ddd
-  margin-top 20px
+  color red
+  padding 20px 0 50px 0
 
-.dailyHeader
-  width 100%
-  height 40px
-  background-color #222
-  color #c8c8c8
-  font-family "Varela Round", sans-serif
-  table
-    width 100%
-    height 100%
-    vertical-align middle
-  th
-    padding 0
-    width 50%
-    text-align right
-    font-weight 100
-  td
-    padding 0
-    text-align left
-    font-weight 900
 
-.dataUnavailable
   width 100%
   text-align center
   color red
