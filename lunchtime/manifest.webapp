@@ -7,7 +7,7 @@
   "developer": {
     "name": "Tor Arvid Lund"
   },
-  "launch_path": "/index.html",
+  "launch_path": "/lunchtime/index.html",
   "orientation": "portrait",
   "fullscreen": "false",
   "permissions": {
