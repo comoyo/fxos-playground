@@ -15,8 +15,11 @@ LunchTime = React.createClass {
     @state.ajax.getJson(url)
       .then (data) =>
         dataForDay = _.find(data, (day) -> day.date == timestamp.format("DD-MM-YYYY"))
-        callback dataForDay
-      , (error) -> console.error "Error #{JSON.stringify(error)}"
+        callback {menuData: dataForDay}
+      , (error) ->
+        msg = "Error #{JSON.stringify(error)}"
+        console.error msg
+        callback {error: msg}
     .done()
   setupWithTimestamp: (timestamp) -> @getDataForTimestamp timestamp, @renderForDayData
   onWakeup: -> @setupWithTimestamp moment()
@@ -30,7 +33,9 @@ LunchTime = React.createClass {
     switch data.newState
       when "settings"
         console.log "Go to settings"
-  componentDidMount: -> @setupWithTimestamp moment()
+  componentDidMount: ->
+    @renderForDayData {state: "waiting"}
+    @setupWithTimestamp moment()
   render: -> `(
     <div ref="root" className="lunchtimeRoot fullHeight">
       <div id="slider" className="fullHeight">
@@ -53,8 +58,11 @@ DailyContent = React.createClass {
   getContent: ->
     props = @props
     if props.data
-      return props.data.cantines.map (cantine) =>
-        `(<CantineContent key={cantine.name} data={cantine} lang={props.lang} />)`
+      if props.data.menuData
+        return props.data.menuData.cantines.map (cantine) =>
+          `(<CantineContent key={cantine.name} data={cantine} lang={props.lang} />)`
+      if props.data.state == "waiting"
+        return `(<div className="waiting">{config.lang[props.lang].waitingForData}</div>)`
     return `(
       <div className="dataUnavailable">{config.lang[props.lang].lunchDataUnavailable}</div>)`
   render: ->

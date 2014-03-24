@@ -6,14 +6,16 @@
       "soup": "Soup",
       "salad": "Salad",
       "desert": "Dessert",
-      "lunchDataUnavailable": "Error downloading the lunch menu. Computer says no :("
+      "lunchDataUnavailable": "Error downloading the lunch menu. Computer says no :(",
+      "waitingForData": "Downloading menu"
     },
     "no": {
       "main": "Varmrett",
       "soup": "Suppe",
       "salad": "Salat",
       "desert": "Dessert",
-      "lunchDataUnavailable": "Feil ved nedlasting av lunsjmeny. Computer says no :("
+      "lunchDataUnavailable": "Feil ved nedlasting av lunsjmeny. Computer says no :(",
+      "waitingForData": "Laster meny"
     }
   }
 }
