@@ -27,7 +27,7 @@ gulp.task "coffee", ->
   .pipe(plumber())
   .pipe(coffee(bare: true))
   .on("error", errorHandler)
-  .pipe gulp.dest("./dist/")
+  .pipe gulp.dest("./obj/")
 
 gulp.task "coffeex", ->
   gulp.src("lib/*.coffeex", {base: '.'})
@@ -35,7 +35,7 @@ gulp.task "coffeex", ->
   .pipe(coffee(bare: true))
   .pipe(rename(ext: ".jsx"))
   .pipe(react())
-  .pipe gulp.dest("./dist/")
+  .pipe gulp.dest("./obj/")
 
 gulp.task "stylus", ->
   gulp.src("style/*.styl", {base: '.'})
@@ -46,9 +46,10 @@ gulp.task "stylus", ->
 gulp.task 'copy', ->
   gulp.src ['./etc/*','package.json', 'index.html', 'index.debug.html', 'manifest.webapp'], {base: '.'}
     .pipe gulp.dest('./dist')
+    .pipe gulp.dest('./obj')
 
 gulp.task "browserify", ["coffee", "coffeex"], ->
-  gulp.src("./dist/lib/lunchtime.js", read: false)
+  gulp.src("./obj/lib/lunchtime.js", read: false)
   .pipe(browserify({debug: false}))
   .on("error", errorHandler)
   .pipe(uglify())
@@ -56,7 +57,7 @@ gulp.task "browserify", ["coffee", "coffeex"], ->
   .pipe gulp.dest("./dist/lib")
 
 gulp.task "browserifySourceMaps", ["coffee", "coffeex"], ->
-  gulp.src("./dist/lib/lunchtime.js", read: false)
+  gulp.src("./obj/lib/lunchtime.js", read: false)
   .pipe(browserify({debug: true}))
   .on("error", errorHandler)
   .pipe(rename("bundle.js"))
@@ -86,7 +87,7 @@ gulp.task 'livereload', ->
       server.changed file.path
 
 gulp.task "clean", ->
-  gulp.src(["dist/**/*.*"], read: false)
+  gulp.src(["dist/", "obj/"], read: false)
   .pipe clean()
 
 gulp.task "deploy", ["clean"], ->

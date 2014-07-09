@@ -5,8 +5,8 @@ config = require("../etc/config")
 moment = require("moment")
 Init = require("./init")
 
-LunchTime = React.createClass {
-  getInitialState: -> {ajax: new Ajax()}
+DailyContent = React.createClass {
+  getInitialState: -> {ajax: new Ajax(), menuData: {}}
   getDataForTimestamp: (timestamp, callback) ->
     timestamp.lang("nb_NO") #We want norwegian time zone for Fornebu
     url = config.lunchUrlTemplate
@@ -21,53 +21,36 @@ LunchTime = React.createClass {
         console.error msg
         callback {error: msg}
     .done()
-  setupWithTimestamp: (timestamp) -> @getDataForTimestamp timestamp, @renderForDayData
-  onWakeup: -> @setupWithTimestamp moment()
-  renderForDayData: (data) ->
-    props = @props
-    React.unmountComponentAtNode @refs.dailyContainer.getDOMNode()
-    React.renderComponent(
-      `<DailyContent data={data} lang={props.lang} stateChange={this.stateChange} />`
-      , @refs.dailyContainer.getDOMNode())
-  stateChange: (data) ->
-    switch data.newState
-      when "settings"
-        console.log "Go to settings"
-  componentDidMount: ->
-    @renderForDayData {state: "waiting"}
+  setupWithTimestamp: (timestamp) -> @getDataForTimestamp timestamp, @setDayData
+  getResetState: ->
+    newState = {}
+    if @state.error
+      newState.error = undefined
+    if @state.isWaiting
+      newState.isWaiting = false
+    if @state.menuData
+      newState.menuData = undefined
+    newState
+  setDayData: (data) ->
+    newState = _.extend(@getResetState(), data)
+    @setState newState
+  renderContent: ->
+    lang = @props.lang
+    if _.any @state.menuData
+      return @state.menuData.cantines.map (cantine) ->
+        `(<CantineContent key={cantine.name} data={cantine} lang={lang} />)`
+    if @state.isWaiting
+      return `(<div className="waiting">{config.lang[lang].waitingForData}</div>)`
+    if @state.error
+      return `(<div className="dataUnavailable">{config.lang[lang].lunchDataUnavailable}</div>)`
+  refresh: ->
+    @setDayData {isWaiting: true}
     @setupWithTimestamp moment()
-  render: -> `(
-    <div ref="root" className="lunchtimeRoot fullHeight">
-      <div id="slider" className="fullHeight">
-        <div id="overflow" className="fullHeight">
-          <div id="inner" className="fullHeight">
-            <div ref="dailyContainer" className="fullHeight">
-            </div>
-            <div ref="settingsContainer">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    )`
-}
-
-DailyContent = React.createClass {
-  clickSettings: ->
-    @props.stateChange {"newState": "settings"}
-  getContent: ->
-    props = @props
-    if props.data
-      if props.data.menuData
-        return props.data.menuData.cantines.map (cantine) =>
-          `(<CantineContent key={cantine.name} data={cantine} lang={props.lang} />)`
-      if props.data.state == "waiting"
-        return `(<div className="waiting">{config.lang[props.lang].waitingForData}</div>)`
-    return `(
-      <div className="dataUnavailable">{config.lang[props.lang].lunchDataUnavailable}</div>)`
+  onWakeup: -> @refresh()
+  componentDidMount: -> @refresh()
   render: ->
     return `(
-      <div className="dailyContainer fullHeight">
+      <div ref="dailyRoot" className="dailyContainer fullHeight">
         <div className="dailyAllButFooter">
           <div className="dailyHeader">
             <div className="header element1">
@@ -77,7 +60,7 @@ DailyContent = React.createClass {
           </div>
           <div className="dailyContent">
             <h2>Menu du jour:</h2>
-            {this.getContent()}
+            {this.renderContent()}
           </div>
         </div>
         <div className="dailyFooter">Tor Arvid, Denis &amp; Hans Christian</div>
@@ -115,9 +98,9 @@ CantineContent = React.createClass {
 
 window.onload = ->
   init = new Init()
-  container = document.getElementById 'lunchtimeContainer'
+  container = document.getElementById 'dailyContainer'
   language = init.getLanguage navigator.language
-  app = React.renderComponent `<LunchTime lang={language}/>`, container
+  app = React.renderComponent `<DailyContent lang={language}/>`, container
   init.registerPageVisibility app.onWakeup
 
-module.exports = LunchTime
+module.exports = DailyContent
