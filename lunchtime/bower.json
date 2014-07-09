@@ -1,0 +1,30 @@
+{
+  "name": "Lunchtime",
+  "version": "1.0.0",
+  "authors": [
+    "Tor Arvid Lund <torarvid@comoyo.com>"
+  ],
+  "description": "What's for lunch at Telenor Fornebu today?",
+  "main": "index.html",
+  "moduleType": [
+    "node"
+  ],
+  "license": "Apache 2.0",
+  "homepage": "http://firefoxos-public.comoyo.com/lunchtime",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.10.0",
+    "q": "~1.0.0",
+    "underscore": "~1.6.0",
+    "jquery": "~2.1.1",
+    "moment": "~2.7.0",
+    "sprintf": "~1.0.0"
+  }
+}

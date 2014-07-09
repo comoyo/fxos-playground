@@ -1,3 +1,5 @@
 dist/
 node_modules/
 aws.json
+bower_components/
+obj/
