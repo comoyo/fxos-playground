@@ -1,5 +1,5 @@
 {
-  "lunchUrlTemplate": "http://s3-eu-west-1.amazonaws.com/telenorlunch.ddenis.info/${year4digits}-w${week2digits}-fornebu.json",
+  "lunchUrlTemplate": "/menus/${year4digits}-w${week2digits}-fornebu.json",
   "lang": {
     "en": {
       "main": "Main",
