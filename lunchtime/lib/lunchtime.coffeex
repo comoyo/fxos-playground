@@ -10,7 +10,7 @@ DailyContent = React.createClass {
   getDataForTimestamp: (timestamp, callback) ->
     timestamp.lang("nb_NO") #We want norwegian time zone for Fornebu
     url = config.lunchUrlTemplate
-      .replace "${year4digits}", timestamp.year()
+      .replace "${year4digits}", timestamp.format("gggg")
       .replace "${week2digits}", timestamp.format("ww")
     @state.ajax.getJson(url)
       .then (data) =>

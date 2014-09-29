@@ -1,5 +1,5 @@
 {
-  "lunchUrlTemplate": "/menus/${year4digits}-w${week2digits}-fornebu.json",
+  "lunchUrlTemplate": "/lunchtime/menus/${year4digits}-w${week2digits}-fornebu.json",
   "lang": {
     "en": {
       "main": "Main",
