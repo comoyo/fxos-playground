@@ -52,7 +52,14 @@ gulp.task("stylus", function() {
 });
 
 gulp.task('copy', function() {
-  return gulp.src(['./etc/*', 'package.json', 'index.html', 'index.debug.html', 'manifest.webapp']
+  return gulp.src([
+    './etc/*',
+    'package.json',
+    'index.html',
+    'index.debug.html',
+    'manifest.webapp',
+    'favicon.png',
+    'ios/**']
     ,{base: '.'})
   .pipe(gulp.dest('./dist'))
   .pipe(gulp.dest('./obj'));
